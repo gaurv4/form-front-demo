@@ -1,5 +1,5 @@
 const config = {
-    SERVER: process.env.SERVER
+    SERVER: process.env.NEXT_PUBLIC_SERVER
 }
 
 const env = {
