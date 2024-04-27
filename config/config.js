@@ -1,9 +1,9 @@
 const config = {
-    SERVER: process.env.NEXT_PUBLIC_SERVER
+    SERVER: process.env.SERVER
 }
 
 const env = {
-    get(ENV:any) {
+    get(ENV) {
         const env = config[ENV]
         if (env) {
             return env

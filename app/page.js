@@ -30,11 +30,11 @@ export default function page() {
       if (response.data.msg) {
         setauthRes(response.data);
       }
-    } catch (error:any) {
+    } catch (error) {
       if (error.response) {
         setauthRes(error?.response?.data);
       } else {
-        setauthRes({ error: "Internal server Error" });
+        setauthRes({ error: "Internal server Error" })
       }
     }
   };
