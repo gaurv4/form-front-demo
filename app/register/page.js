@@ -15,7 +15,7 @@ export default function page() {
     e.preventDefault()
     try {
       const response = await axios.post(
-        `${env.get('SERVER')}/api/auth/register`,
+        `https://server-backend-3p2t.onrender.com/api/auth/register`,
         { name, email, password },
         {
           headers: {
