@@ -14,8 +14,8 @@ export default function page() {
     setshowpass(!showpass)
   }
   
-  const sendData = async (e) => {
-    e.preventDefault()
+  const sendData = async () => {
+    
     try {
       const response = await axios.post(
         `https://server-backend-3p2t.onrender.com/api/auth/login`,
@@ -57,11 +57,7 @@ export default function page() {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign in to your account
             </h1>
-            <form
-              method="POST"
-              className="space-y-4 md:space-y-6"
-              onSubmit={sendData}
-            >
+            <div className="space-y-4 md:space-y-6">
               <div className="border-red-700 bg-red-100 rounded-md flex justify-center">
                 <p className="text-red-500 px-3">
                   {authRes?.msg}
@@ -130,7 +126,7 @@ export default function page() {
                 </a>
               </div>
               <button
-                type="submit"
+                onclick={sendData}
                 className="w-full text-white bg-blue-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Sign in
@@ -144,7 +140,7 @@ export default function page() {
                   Sign up
                 </a>
               </p>
-            </form>
+            
           </div>
         </div>
       </div>
