@@ -93,7 +93,7 @@ export default function page() {
                 />
                 <button
                   className="absolute top-10 right-6 text-xl"
-                  onClick={setshowpass(!showpass)}
+                  onClick={pass}
                 >
                   {showpass ? (
                     <AiFillEye className="dark:text-white" />
