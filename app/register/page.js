@@ -11,8 +11,8 @@ export default function page() {
   const [name, setname] = useState();
   const [showpass, setshowpass] = useState(false);
 
-  const sendData = async (e) => {
-    e.preventDefault()
+  const sendData = async () => {
+    
     try {
       const response = await axios.post(
         `https://server-backend-3p2t.onrender.com/api/auth/register`,
@@ -54,11 +54,7 @@ export default function page() {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign up to your account
             </h1>
-            <form
-              method="POST"
-              className="space-y-4 md:space-y-6"
-              onSubmit={sendData}
-            >
+            <div className="space-y-4 md:space-y-6">
               <div className="border-red-700 bg-red-100 rounded-md flex justify-center">
                 <p className="text-red-500 px-2">
                   {authRes?.msg}
@@ -135,7 +131,7 @@ export default function page() {
                 </div>
               </div>
               <button
-                type="submit"
+                onClick={sendData}
                 className="w-full text-white bg-blue-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Sign up
@@ -149,7 +145,7 @@ export default function page() {
                   Sign in
                 </a>
               </p>
-            </form>
+            </div>
           </div>
         </div>
       </div>
