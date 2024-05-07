@@ -140,7 +140,7 @@ export default function page() {
                   Sign up
                 </a>
               </p>
-            
+            </div>
           </div>
         </div>
       </div>
